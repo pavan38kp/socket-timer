@@ -2,6 +2,7 @@ require('dotenv').config();
 import * as app from "express";
 import { createServer } from "http";
 
+// @ts-ignore
 const server = createServer(app);
 
 const io = require("socket.io")(server, {

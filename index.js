@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
 const app = __importStar(require("express"));
 const http_1 = require("http");
+// @ts-ignore
 const server = (0, http_1.createServer)(app);
 const io = require("socket.io")(server, {
     cors: {
@@ -54,6 +55,6 @@ io.on("connection", (socket) => {
         }, 1000);
     });
 });
-server.listen(3003, () => {
+server.listen(process.env.PORT, () => {
     console.log("server listening at port 3003");
 });
